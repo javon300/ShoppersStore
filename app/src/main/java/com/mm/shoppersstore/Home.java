@@ -2,6 +2,8 @@ package com.mm.shoppersstore;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -16,6 +18,9 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Home extends AppCompatActivity
 {
     private static final String TAG = "HOME CLASS";
@@ -28,7 +33,33 @@ public class Home extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         readFromDatabase();
+        List<Product> data = fill_with_data();
+
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        ProductRecycleViewAdapter adapter = new ProductRecycleViewAdapter(data, getApplication());
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
     }
+
+    public List<Product> fill_with_data() {
+
+        List<Product> data = new ArrayList<>();
+        data.add(new Product("C","sdfsdf","sdfsf"));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+        data.add(new Product("C++", "",""));
+
+        return data;
+    }
+
 
     public void readFromDatabase()
     {
