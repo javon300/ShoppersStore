@@ -22,4 +22,7 @@ public class Product
         this.imageAddress = imageAddress;
     }
 
+    public Product() {
+
+    }
 }
