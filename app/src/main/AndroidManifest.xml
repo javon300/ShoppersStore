@@ -4,8 +4,8 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
-    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
 
     <application
@@ -16,14 +16,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ShoppersStore">
         <activity
+            android:name=".BuyActivity"
+            android:exported="false" />
+        <activity
             android:name=".Home"
             android:exported="false" />
         <activity
             android:name=".Registration"
             android:exported="false" />
         <activity
-        android:name=".Login"
-        android:exported="false"/>
+            android:name=".Login"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
